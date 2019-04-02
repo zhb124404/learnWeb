@@ -10,6 +10,20 @@
 				height: 100px;
 				width: 200px;
 			}
+			
+			div.panel,
+			p.flip {
+				margin: 0px;
+				padding: 5px;
+				text-align: center;
+				background: #e5eecc;
+				border: solid 1px #c3c3c3;
+			}
+			
+			div.panel {
+				height: 120px;
+				display: none;
+			}
 		</style>
 		<script src="../js/jquery-1.11.3.js"></script>
 	</head>
@@ -41,7 +55,22 @@
 			<pre>$(&quot;p&quot;).css(&quot;background-color&quot;,&quot;red&quot;);</pre>
 		</section>
 		<section>
-			<h2>jQuery事件</h2>
+			<h2>淡入淡出</h2>
+			<button onclick="fadeToggle()">点击这里，使三个矩形淡入淡出</button>
+			<div id="div2" style="width:80px;height:80px;background-color:red;"></div>
+			<br>
+			<div id="div3" style="width:80px;height:80px;background-color:green;"></div>
+			<br>
+			<div id="div4" style="width:80px;height:80px;background-color:blue;"></div>
+		</section>
+		<section>
+			<h2>滑动效果</h2>
+			<div class="panel">
+				<p>W3School - 领先的 Web 技术教程站点</p>
+				<p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+			</div>
+
+			<p class="flip" onclick="slide()">点击这里隐藏/显示面板</p>
 		</section>
 		<script>
 			var isShowP = true;
@@ -65,6 +94,15 @@
 					$("#div1").show();
 					isShowDiv1 = true;
 				};
+			}
+
+			function fadeToggle() {
+				$("#div2").fadeToggle();
+				$("#div3").fadeToggle("slow");
+				$("#div4").fadeToggle(3000);
+			}
+			function slide(){
+				$(".panel").slideToggle();
 			}
 		</script>
 	</body>
