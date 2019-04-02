@@ -4,12 +4,69 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Jquery学习</title>
+		<style type="text/css">
+			#div1 {
+				background-color: #AB47BC;
+				height: 100px;
+				width: 200px;
+			}
+		</style>
 		<script src="../js/jquery-1.11.3.js"></script>
-		<script type="text/javascript">
-		</script>
 	</head>
 
 	<body>
+		<p>这是一个段落</p>
+		<p>这是一个段落gg</p>
+		<p>这是一个段落gffdgr</p>
+		<p>这是一个段落grgrreg</p>
+		<button onclick="hideP()">隐藏/显示所有的p元素</button>
+		<div id="div1">这是一个id=div1的div</div>
+		<button onclick="hideID()">隐藏/显示id="div1"的元素(class类似)</button>
+		<section>
+			<h2>jQuery选择器</h2>
+			<h3>jQuery元素选择器</h3>
+			<p>jQuery 使用 CSS 选择器来选取 HTML 元素。</p>
+			<p>$(&quot;p&quot;) 选取 &lt;p&gt; 元素。</p>
+			<p>$(&quot;p.intro&quot;) 选取所有 class=&quot;intro&quot; 的 &lt;p&gt; 元素。</p>
+			<p>$(&quot;p#demo&quot;) 选取所有 id=&quot;demo&quot; 的 &lt;p&gt; 元素。</p>
+			<h3>jQuery属性选择器</h3>
+			<p>jQuery 使用 XPath 表达式来选择带有给定属性的元素。</p>
+			<p>$(&quot;[href]&quot;) 选取所有带有 href 属性的元素。</p>
+			<p>$(&quot;[href='#']&quot;) 选取所有带有 href 值等于 &quot;#&quot; 的元素。</p>
+			ot;) 选取所有带有 href 值不等于 &quot;#&quot; 的元素。</p>
+			<p>$(&quot;[href$='.jpg']&quot;) 选取所有 href 值以 &quot;.jpg&quot; 结尾的元素。</p>
+			<h3>jQueryCSS选择器</h3>
+			<p>jQuery CSS 选择器可用于改变 HTML 元素的 CSS 属性。</p>
+			<p>下面的例子把所有 p 元素的背景颜色更改为红色：</p>
+			<pre>$(&quot;p&quot;).css(&quot;background-color&quot;,&quot;red&quot;);</pre>
+		</section>
+		<section>
+			<h2>jQuery事件</h2>
+		</section>
+		<script>
+			var isShowP = true;
+			var isShowDiv1 = true;
+
+			function hideP() {
+				if(isShowP) {
+					$("p").hide();
+					isShowP = false;
+				} else {
+					$("p").show();
+					isShowP = true;
+				};
+			}
+
+			function hideID() {
+				if(isShowDiv1) {
+					$("#div1").hide();
+					isShowDiv1 = false;
+				} else {
+					$("#div1").show();
+					isShowDiv1 = true;
+				};
+			}
+		</script>
 	</body>
 
 </html>
